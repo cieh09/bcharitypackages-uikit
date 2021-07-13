@@ -2,14 +2,15 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     entry: {
-        main: './src/theme/index.ts'
+        main: './src/index.ts',
+        theme: './src/theme/index.ts',
+        box: './src/components/Box/types.ts'
     },
     module: {
         rules: [
             {
-                test: /\\.ts$/,
+                test: /\.ts$|tsx/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -19,12 +20,15 @@ module.exports = {
                         ]
                     }
                 },
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
                
-            }
         ]
     },
     resolve: {
-        extensions: ['.ts'],
+        extensions: ['.ts', '.tsx','.js'],
     },
     plugins: [
         new webpack.CleanPlugin(),

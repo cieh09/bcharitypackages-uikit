@@ -1,3 +1,13 @@
+import { AlertTheme } from "@bcharitypackages/uikit/src/components/Alert/types";
+import { CardTheme } from "@bcharitypackages/uikit/src/components/Card/types";
+import { PancakeToggleTheme } from "@bcharitypackages/uikit/src/components/PancakeToggle/types";
+import { RadioTheme } from "@bcharitypackages/uikit/src/components/Radio/types";
+import { ToggleTheme } from "@bcharitypackages/uikit/src/components/Toggle/types";
+import { TooltipTheme } from "@bcharitypackages/uikit/src/components/Tooltip/types";
+import { NavTheme } from "@bcharitypackages/uikit/src/widgets/Menu/types";
+import { ModalTheme } from "@bcharitypackages/uikit/src/widgets/Modal/types";
+
+
 export type Breakpoints = string[];
 
 export type MediaQueries = {
@@ -72,4 +82,24 @@ export type Colors = {
 export type ZIndices = {
   dropdown: number;
   modal: number;
+};
+
+export interface PancakeTheme {
+  siteWidth?: number;
+  isDark?: boolean;
+  alert?: AlertTheme;
+  colors?: Colors;
+  card?: CardTheme;
+  nav?: NavTheme;
+  modal?: ModalTheme;
+  pancakeToggle?: PancakeToggleTheme;
+  radio?: RadioTheme;
+  toggle?: ToggleTheme;
+  tooltip?: TooltipTheme;
+  breakpoints?: Breakpoints;
+  mediaQueries?: MediaQueries;
+  spacing?: Spacing;
+  shadows?: Shadows;
+  radii?: Radii;
+  zIndices?: ZIndices;
 };
